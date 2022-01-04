@@ -2,12 +2,8 @@
 
 Import-Module AADInternals
 
-$user = "meganb@M---.onmicrosoft.com" #Replace this with your tenant's username
-$password = "" #And your password
-$secpwd = ConvertTo-SecureString $password -AsPlainText -Force
-$Cred = New-Object System.Management.Automation.PSCredential ($user,$secpwd)
-
-$token = Get-AADIntAccessTokenForTeams -Credentials $cred
+#This will prompt for credentials so it supports MFA login
+$token = Get-AADIntAccessTokenForTeams
 
 $skypeToken = Get-AADIntSkypeToken -AccessToken $token
 
