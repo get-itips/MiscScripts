@@ -64,7 +64,6 @@ $result=Invoke-WebRequest -UseBasicParsing -Uri $finalUrl `
   "x-ms-client-version"="1415/1.0.0.2021120940"
   "authentication"="skypetoken=$skypeToken"
   "sec-ch-ua-platform"="`"Windows`""
-  "x-ms-session-id"="a5ad4294-5752-458b-7bf0-7cdd06de88c9"
   "x-ms-scenario-id"="716"
   "x-ms-client-env"="pckgsvc-prod-c1-usea-01"
   "sec-ch-ua-mobile"="?0"
