@@ -11,12 +11,14 @@
     #>
 
 #Connect to Graph
-Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All,Chat.Read,Chat.ReadWrite,ChatMember.ReadWrite,Chat.ReadBasic"
+Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All,Chat.Read,Chat.ReadWrite,ChatMember.ReadWrite,Chat.ReadBasic" -ForceRefresh
 
 $sipURI=Read-Host "Enter your SIP URI"
-Write-Host "Entered user has the following active chats"
-Write-Host "-------------------------------------------"
-Get-MgUserChat -UserId $sipURI2
+Write-Host "Entered user has the following active chats" -ForegroundColor Green
+Write-Host "-------------------------------------------" -ForegroundColor Green
+Get-MgUserChat -UserId $sipURI -Verbose
+
+foreach($userChat in $userChats){$userChat.id}
 Write-Host "To better identify chats, open teams web, browse to chats and look the URL for the desired chat." -ForegroundColor Green
 
 $groupChat=Read-Host "Copy the desired group id chat from the list and paste it here:"
