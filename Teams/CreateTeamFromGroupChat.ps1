@@ -41,3 +41,9 @@ foreach($mp in $memberproperties){
 	
 	Add-TeamUser -GroupId $group.GroupId -User $mp.email -MailNickname $newTeamNick -visibility $newTeamVisibility
 	}
+	
+Write-Host "Done, now showing results..." -ForegroundColor Green
+
+Get-Team -GroupId $group.GroupId
+
+Get-TeamUser -GroupId $group.GroupId
