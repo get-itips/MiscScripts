@@ -17,6 +17,8 @@ $sipURI=Read-Host "Enter your SIP URI"
 Write-Host "Entered user has the following active chats" -ForegroundColor Green
 Write-Host "-------------------------------------------" -ForegroundColor Green
 Get-MgUserChat -UserId $sipURI -Verbose
+$chats=Get-MgUserChat -UserId $sipURI -Verbose
+$chats | ft id,chattype,topic
 
 foreach($userChat in $userChats){$userChat.id}
 Write-Host "To better identify chats, open teams web, browse to chats and look the URL for the desired chat." -ForegroundColor Green
